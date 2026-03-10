@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using backend_interview_mid.Contexts;
 
 namespace backend_interview_mid
 {
@@ -11,7 +12,7 @@ namespace backend_interview_mid
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<BackendExamHubDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
