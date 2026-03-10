@@ -1,0 +1,6 @@
+@backend_interview_mid_HostAddress = http://localhost:5180
+
+GET {{backend_interview_mid_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
