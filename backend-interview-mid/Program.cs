@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using backend_interview_mid.Contexts;
+using backend_interview_mid.Services; // New using statement
 
 namespace backend_interview_mid
 {
@@ -14,6 +15,9 @@ namespace backend_interview_mid
             builder.Services.AddControllers();
             builder.Services.AddDbContext<BackendExamHubDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<IMyofficeAcpdService, MyofficeAcpdService>();  
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
